@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ExchangeRate {
-        private static final Map<Character, String> currencySymbols = new HashMap<Character, String>();
+        private static final Map<Character, String> currencySymbols =
+                new HashMap<Character, String>();
         static {
             currencySymbols.put('1', "RUB");
             currencySymbols.put('2', "CNY");
@@ -30,7 +31,7 @@ public class ExchangeRate {
                     char innerChoice = '0';
                     while (!flag) {
                         System.out.println("Выберите валюту, для которой хотите получить " +
-                                "обменный курс");
+                                           "обменный курс");
                         System.out.print("1 - RUB\n" +
                                 "2 - CNY\n" +
                                 "3 - USD\n" +
@@ -46,7 +47,8 @@ public class ExchangeRate {
 
                     flag = false;
                     while (!flag) {
-                        System.out.println("Введите сумму для указанной валюты");
+                        System.out.println("Введите сумму для указанной валюты " +
+                                           "(ввод через запятую)");
                         if (scanner.hasNextDouble()) {
                             amount = scanner.nextDouble();
                             if (amount >= 0.0001) {
@@ -61,7 +63,8 @@ public class ExchangeRate {
                     }
                     amount = ((int) (amount * 10000)) / 10000.0;
 
-                    Exchanger.getExchangeRate(amount, currencySymbols.get(innerChoice));
+                    Exchanger.getExchangeRate(amount,
+                            currencySymbols.get(innerChoice));
                     break;
                 case '2':
                     scanner.close();

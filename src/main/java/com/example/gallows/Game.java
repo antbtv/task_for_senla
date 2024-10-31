@@ -3,8 +3,8 @@ package com.example.gallows;
 import java.util.*;
 
 public class Game {
-    private static final String[] WORDS = {"виселица", "прятки", "сторож", "копейка", "леопард",
-            "аттракцион", "дрессировка"};
+    private static final String[] WORDS = {"виселица", "прятки", "сторож", "копейка",
+            "леопард", "аттракцион", "дрессировка"};
     private static final int MAX_LIVES = 6;
 
     public static void start() {
@@ -44,7 +44,8 @@ public class Game {
                 countOfMisses++;
             }
             if (!Arrays.toString(answer).contains("_")) {
-                System.out.println("Вы победили! Очки: " + (MAX_LIVES - countOfMisses) + "\n\n");
+                System.out.println("Вы победили! Очки: " + (MAX_LIVES - countOfMisses) +
+                        "\n\n");
                 return;
             }
         }
