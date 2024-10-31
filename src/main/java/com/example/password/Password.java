@@ -6,6 +6,7 @@ public class Password {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int length;
+        String answer;
 
         char choice;
         while (true) {
@@ -23,7 +24,8 @@ public class Password {
                     choice = scanner.next().charAt(0);
                     switch (choice) {
                         case '1':
-                            Generator.generatePassword(length);
+                            answer = Generator.generatePassword(length);
+                            System.out.println(answer + "\n");
                             break;
                         case '2':
                             boolean flag = false;
@@ -41,7 +43,8 @@ public class Password {
                                     scanner.next();
                                 }
                             }
-                            Generator.generatePassword(length);
+                            answer = Generator.generatePassword(length);
+                            System.out.println(answer + "\n");
                             break;
                         default:
                             System.out.println("Неверный ввод\n");
